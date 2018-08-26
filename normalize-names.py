@@ -11,11 +11,11 @@ with open('names.list') as file_reader:
 
 file_writer = open('arabic-names.list', mode='w', buffering=1)
 normalized_names = set()
-status = -1
 delay = 5
 for name in names:
     print(name)
     blob = TextBlob(name)
+    status = -1
     while status != 200:
         try:
             translation = blob.translate(from_lang='en', to='ar')
