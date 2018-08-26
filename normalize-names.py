@@ -18,10 +18,10 @@ for name in names:
     blob = TextBlob(name)
     while status != 200:
         try:
-            trans = blob.translate(from_lang='en', to='ar')
-            print(trans)
-            normalized_names.add(trans)
-            file_writer.write(trans + '\n')
+            translation = blob.translate(from_lang='en', to='ar')
+            print(translation)
+            normalized_names.add(translation)
+            file_writer.write(str(translation) + '\n')
             status = 200
         except textblob.exceptions.NotTranslated:
             print('No translation')
